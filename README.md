@@ -20,6 +20,8 @@ $d_{max}, d_{min}$: Maximum (major) and minimum (minor) axes lengths (normalized
 
 $\theta$: Rotation angle converted into sine and cosine components to ensure periodicity and continuous gradients during backpropagation.
 
+![Ground Truth Ellipse Obtained From Mask](readme_images/img1.png)
+
 ### 2. Network Architectures
 
 We evaluate the small and large version of MobileNet v3, both models using pre-trained ImageNet weights. Since MobileNetv3 is built to predict objects among 1000 classes we must custom the final classifier layer so that the network converts the final feature maps to the 6 continuous output targets.
@@ -65,11 +67,13 @@ Second, on the MobileNetv3_large:
 
 The pipeline contains automated denormalization functions to overlay your model predictions and the ground truth onto the original ultrasound scan for clinical confirmation. Also, there is a function to evaluate your model on N randomly selected samples from the test_loader.
 
+![Some Predictions vs Ground Truth](readme_images/img3.png)
 
+![Table of Training Results](readme_images/img2.png)
 
 ## **Authors & Acknowledgments**
 
-Adrià García   Manel Gutierrez   Ernest Fosch   
+Adrià García | Manel Gutierrez | Ernest Fosch   
 
 Developed as a Deep Learning Final Project at UPF. Special credits are due to the creators of the HC18 Automated Fetal Head Circumference Challenge dataset and to the previous work done by Fangyijie Wang.
 
