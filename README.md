@@ -15,7 +15,9 @@ The ground truth binary masks are automatically parsed to extract an outer bound
 $$\mathbf{y} = [X_c, Y_c, d_{max}, d_{min}, \sin(2\theta), \cos(2\theta)]$$
 
 $X_c, Y_c$: Center spatial coordinates of the ellipse (normalized by image size).
+
 $d_{max}, d_{min}$: Maximum (major) and minimum (minor) axes lengths (normalized by image size).
+
 $\theta$: Rotation angle converted into sine and cosine components to ensure periodicity and continuous gradients during backpropagation.
 
 ### 2. Network Architectures
