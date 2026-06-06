@@ -61,3 +61,18 @@ Second, on the MobileNetv3_large:
 - Total parameters: 3,095,734
 - Last 6 layers + Classifier: 2,903,790 trainable parameters.
 
+## **Visualizing Results** 
+
+The pipeline contains automated denormalization functions to overlay your model predictions and the ground truth onto the original ultrasound scan for clinical confirmation. Also, there is a function to evaluate your model on N randomly selected samples from the test_loader.
+
+
+
+## **Authors & Acknowledgments**
+
+Adrià García   Manel Gutierrez   Ernest Fosch   
+
+Developed as a Deep Learning Final Project at UPF. Special credits are due to the creators of the HC18 Automated Fetal Head Circumference Challenge dataset and to the previous work done by Fangyijie Wang.
+
+[Wang's GitHub rpository Here.](https://github.com/13204942/FT_Methods_for_Fetal_Head_Segmentation.git)
+
+
