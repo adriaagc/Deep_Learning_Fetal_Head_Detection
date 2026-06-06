@@ -42,4 +42,20 @@ The script executes a Train/Validation split of 80/20 on the 799 training sample
 - Test Dataset: 200 images
 Images and masks are downscaled to a unified spatial resolution of $256 \times 256$ pixels.
 
+**Step 3: Run Training & Evaluation**
+
+Open the notebook MobileNetv3_Ellipse_Points.ipynb and execute the cells sequentially to instantiate the dataset and use OpenCV contour tracking to parse masks into normalized vectors, define data augmentation: RandomRotation (15 degrees), RandomAffine transforms (±10% translation, 0.9-1.1 scale zoom) with bilinear interpolation and ColorJitter to change the brightness and contrast. Then train the models using Mean Squared Error (MSE) loss on the normalized target parameters, utilizing a default batch size of 16 to try to stabilize variance gradients.
+
+**Step 4: Layer-Freezing Experiments**
+
+First, on the MobileNetv3_small depending on the amount of layers you freeze you will have different number of parameters and performances:
+- Total parameters: 1,001,638
+- Classifier Only (Linear Head): Freezes the whole backbone (74,630 trainable parameters).
+- Last 2 Layers + Classifier: 425,174 trainable parameters.
+- Last 4 Layers + Classifier: 811,118 trainable parameters.
+- Last 6 Layers + Classifier: 862,886 trainable parameters.
+
+Second, on the MobileNetv3_large:
+- Total parameters: 3,095,734
+- Last 6 layers + Classifier: 2,903,790 trainable parameters.
 
