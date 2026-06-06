@@ -30,10 +30,12 @@ pip install torch torchvision numpy opencv-python matplotlib
 ## **Step-by-Step Reproduction Guide**
 
 **Step 1: Data Preparation**
+
 Download the HC18 Fetal Head Circumference dataset.
 Store the zipped files inside the data/ folder exactly as shown in the file structure. The data loader handles zip reads without requiring extraction to disk.
 
 **Step 2: Dataset Validation & Pipeline Setup**
+
 The script executes a Train/Validation split of 80/20 on the 799 training samples, leaving a final data split of:
 - Training Subset: 639 images
 - Validation Subset: 160 images
